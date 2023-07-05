@@ -2,7 +2,7 @@ console.log("Hello World!\n==========\n");
 
 // Exercise 1 Section
 console.log("EXERCISE 1:\n==========\n");
-class Person {
+class person {
   constructor(name, pets, residence, hobbies = [] ) {
     this.name = name;
     this.pets = pets;
@@ -10,7 +10,7 @@ class Person {
     this.hobbies = hobbies;
   }
  addHobby(hobby) {
-    console.log(hobby)
+  console.log(hobby)
     console.log(this.hobbies)
     this.hobbies.push(hobby);
 
@@ -21,7 +21,9 @@ class Person {
     let valuesBefore = this.hobbies.slice(0,foundIdx);
 
     let valuesAfter = this.hobbies.slice(foundIdx + 1);
-    // Update Hobbies
+   
+     this.hobbies = valuesBefore.concat(valuesAfter);
+     this.occupation = occupation;
   }
 
   greeting() {
@@ -34,9 +36,31 @@ class Person {
 
 //Exersize 2
 
+class chocolatier extends person {
+  
+ constructor(name, pets, residence, hobbies, occupation) {
+ super(name, pets, residence, hobbies);
+ this.occupation = occupation;
+ }
+greeting() {
+  console.log("Hello, I am a chocolatier!");
+}
+
+}
+
 //Exersize 3
-let person = new Person("Michelle", 2, "Oshkosh,WI");
+ chocolatier = new chocolatier
+("Michelle", 2, "Oshkosh,WI", "hiking", "Making chocolates and Mailing them.");
+
+chocolatier.addHobby("hiking");
+console.log(chocolatier);
+
+chocolatier.removeHobby("hiking");
+console.log(chocolatier);
+
 person.addHobby("hiking");
+person.removeHobby("hiking");
+
 
 //Exercise 4
 class Calculator {

@@ -12,7 +12,7 @@ class person {
  addHobby(hobby) {
   console.log(hobby)
     console.log(this.hobbies)
-    this.hobbies.push(hobby);
+    
 
   }
   removehobby(hobby) {
@@ -21,7 +21,7 @@ class person {
     let valuesBefore = this.hobbies.slice(0,foundIdx);
 
     let valuesAfter = this.hobbies.slice(foundIdx + 1);
-   
+    let occupation = this.occupation
      this.hobbies = valuesBefore.concat(valuesAfter);
      this.occupation = occupation;
   }
@@ -49,17 +49,18 @@ greeting() {
 }
 
 //Exersize 3
- chocolatier = new chocolatier
+chocolatier = new chocolatier 
 ("Michelle", 2, "Oshkosh,WI", "hiking", "Making chocolates and Mailing them.");
 
 chocolatier.addHobby("hiking");
 console.log(chocolatier);
 
-chocolatier.removeHobby("hiking");
+chocolatier = chocolatier
+
+chocolatier.removeHobby;("hiking");
 console.log(chocolatier);
 
-person.addHobby("hiking");
-person.removeHobby("hiking");
+
 
 
 //Exercise 4

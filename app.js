@@ -2,64 +2,68 @@ console.log("Hello World!\n==========\n");
 
 // Exercise 1 Section
 console.log("EXERCISE 1:\n==========\n");
-class person {
-  constructor(name, pets, residence, hobbies = [] ) {
+class Person {
+  constructor(name, pets, residence, hobbies) {
     this.name = name;
     this.pets = pets;
     this.residence = residence;
     this.hobbies = hobbies;
   }
- addHobby(hobby) {
-  console.log(hobby)
-    console.log(this.hobbies)
-    
+ addHobby(resHobby) {
+  this.hobbies.push();
 
   }
-  removehobby(hobby) {
-    let foundIdx = this.hobbies.indexOf(hobby);
-
-    let valuesBefore = this.hobbies.slice(0,foundIdx);
-
-    let valuesAfter = this.hobbies.slice(foundIdx + 1);
-    let occupation = this.occupation
-     this.hobbies = valuesBefore.concat(valuesAfter);
-     this.occupation = occupation;
+  removehobby(resHobby) {
+    let foundIdx = this.hobbies.indexOf(resHobby);
+     this.hobbies.splice(foundIdx, 1);
+    
   }
 
   greeting() {
     console.log("Hellow fellow person!");
   }
 
-  //TBC
-  info() {}
+  toString() {
+   return Object.values(this).toString();
+
+  }
 }
 
 //Exersize 2
 
-class chocolatier extends person {
+class Coder extends Person {
   
  constructor(name, pets, residence, hobbies, occupation) {
- super(name, pets, residence, hobbies);
+  super(name, pets, residence, hobbies);
+ 
  this.occupation = occupation;
  }
-greeting() {
-  console.log("Hello, I am a chocolatier!");
-}
 
+ greeting() {
+  console.log("Hello, I am a coder!");
+}
 }
 
 //Exersize 3
-chocolatier = new chocolatier 
-("Michelle", 2, "Oshkosh,WI", "hiking", "Making chocolates and Mailing them.");
+let coder = new Coder (
+"Michelle",
+2, 
+"Oshkosh,WI",
+["hiking", "diy", "reading"], 
+"Full stack web Devoloper"
+);
 
-chocolatier.addHobby("hiking");
-console.log(chocolatier);
+coder.addHobby("reading");
 
-chocolatier = chocolatier
+console.log(coder);
 
-chocolatier.removeHobby;("hiking");
-console.log(chocolatier);
+coder.removeHobby;("diy");
 
+console.log(coder);
+
+coder.greeting();
+
+console.log(coder.toString())
 
 
 
@@ -68,25 +72,61 @@ class Calculator {
   result = 0;
 
   add(a, b) {
-    this.result = a + b;
+    let res;
+
+    if(b == undefined) {
+      res = this.result + a;
+  } else {
+    res = a + b;
+  }
+    this.result = res;
     return this.result;
   }
   subtract(a, b) {
-    this.result = a - b;
+    let res;
+
+    if(b == undefined) {
+      res = this.result - a;
+  } else{
+    res = a - b;
+  }
+    this.result = res;
     return this.result;
   }
   multiply(a, b) {
-    this.result = a * b;
+    let res;
+
+    if(b == undefined) {
+      res = this.result * a;
+  } else{
+    res = a * b;
+  }
+    this.result = res;
     return this.result;
+  
   }
   divide(a, b) {
-    this.result = a / b;
-    return this.result;
-  }
-}
-let Calc = new Calculator();
+    let res;
 
-console.log(Calc.add(0, 1));
-console.log(Calc.subtract(5, 3));
-console.log(Calc.multiply(1, 3));
-console.log(Calc.divide(8, 2));
+    if(b == undefined) {
+      res = this.result / a;
+  } else{
+    res = a / b;
+  }
+    this.result = res
+    return this.result;
+  
+  }
+  display() {
+   console.log(this.result); 
+ }
+}
+
+ let Calc = new Calculator();
+
+
+Calc.add(10);
+Calc.subtract(2);
+Calc.multiply(4);
+Calc.divide(2);
+Calc.display();
